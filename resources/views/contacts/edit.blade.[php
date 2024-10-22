@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Kontak</title>
+</head>
+<body>
+    <h1>Edit Kontak</h1>
+    <form action="{{ route('contacts.update', $contact->id) }}" method="POST">
+        @csrf
+        @method('PUT')
+        <label for="name">Nama:</label>
+        <input type="text" name="name" value="{{ $contact->name }}" required>
+        <label for="email">Email:</label>
+        <input type="email" name="email" value="{{ $contact->email }}" required>
+        <label for="phone">Telepon:</label>
+        <input type="text" name="phone" value="{{ $contact->phone }}" required>
+        <button type="submit">Update</button>
+    </form>
+</body>
+</html>
